@@ -14,21 +14,13 @@ Agenda
 
 * Oppsett av utviklingsmiljø
 
-* Oppsett av en mock REST-tjeneste
+* Kort om utviklingsmiljø
 
-  - Grunt
+* Oppsett av AngularJS skjelett
 
-  - Node
+* Oppgave
 
-  - Npm
-
-* Oppsett av AngularJS skjellett
-
-  - Yeoman
-
-  - Bower
-
-* Utvikling av en todoliste lokalt i AngularJS
+* AngularJS basics
 
   - Routing
 
@@ -38,7 +30,13 @@ Agenda
 
   - Templating
 
-* Integrering med mock REST-tjeneste
+* Angular oppgaver
+
+* Oppsett av en mock REST-tjeneste
+
+* Oppgaver med REST-tjeneste
+
+* Oppgaver med integrering med mock REST-tjeneste
 
   - Hente data
 
@@ -54,8 +52,6 @@ Oppsett av maskin
   - Editor (anbefaler Sublime)
   - Node, NPM, Git
 
- https://aurora/wiki/display/utf/Bootstrapping+av+JavaScript-applikasjon
-
 ----
 
 Andre kjekke verktøy
@@ -67,32 +63,75 @@ Andre kjekke verktøy
 
 ----
 
-Last ned REST-tjenesten
-=======================
+Hva er utviklingsmiljøet?
+=========================
 
-.. code::
+* JSHint
 
-    $ git clone https://github.com/nixx/express-todo-list.git
+* Kjøring av tester
 
+* Baking
 
-----
+* Minify
 
-Code
-====
-
-* package.json
-* npm
-* Gruntfile.js
-* Grunt
+* Pakketering
 
 ----
 
-Start, og utforsk med Postman
-=============================
+Node.js / Node
+==============
 
-* GET
-* PUT
-* POST
+.. image:: img/nodejs.png
+
+----
+
+NPM
+===
+
+.. image:: img/npm.png
+
+----
+
+Grunt
+=====
+
+.. image:: img/grunt-logo.png
+
+----
+
+Bower
+=====
+
+.. image:: img/bower.png
+
+----
+
+Yeoman
+======
+
+.. image:: img/yeoman.png
+
+----
+
+I Maven-verdenen
+================
+
+* Node.js = Java VM
+
+* NPM = Pakkemanager / Avhengigheter (apt-get / gem / pip / yum)
+
+* NPM (package.json) når man bruker Grunt = pluginDependencies i pom.xml
+
+* Grunt = Maven + goal / Ant
+
+* Bower (bower.json) = Dependencies i pom.xml
+
+* Yeoman = mvn archetype:generate
+
+----
+
+Men hvordan lage en webapplikasjon?
+===================================
 
 ----
 
@@ -117,6 +156,16 @@ AngularJS
 
 ----
 
+Code
+====
+
+* package.json
+
+* Gruntfile.js
+
+* bower.json
+
+----
 
 Oppbygging
 ==========
@@ -130,6 +179,15 @@ Oppbygging
 * dist
 
 ----
+
+Oppgave
+========
+
+* Kjør "grunt serve" i et vindu
+
+* Editer app/views/main.html, skriv inn noe tekst
+
+* Lagre, og se oppdatering i browseren
 
 Terminologi
 ===========
@@ -184,7 +242,6 @@ Angular moduler
             $scope.navn = "En variabel";
         });
 
-
 ----
 
 Last ned skjelett
@@ -198,7 +255,6 @@ ____
 
 Oppgave 1: Navn på innlogget bruker
 ===================================
-
 
 * Lag en fil, userinfo.js
 
@@ -220,6 +276,18 @@ Oppgave 1: Navn på innlogget bruker
         .controller('UserInfoCtrl', function($scope) {
             $scope.navn = "En variabel";
         });
+
+----
+
+Oppgave 1b: To veis binding
+===========================
+
+.. code:: html
+
+    <div ng-controller="UserInfoCtrl">
+        <span>{{name}}</span><input ng-model="name"/>
+    <div>
+
 
 ----
 
@@ -245,6 +313,32 @@ Oppgave 2: Lag en ny route
     <ul ng-repeat="t in todos">
         <li>{{t.title}}</li>
     </ul>
+
+----
+
+Hva med serverside?
+===================
+
+----
+
+Last ned og start REST-tjenesten
+================================
+
+.. code::
+
+    $ git clone https://github.com/nixx/express-todo-list.git
+    $ npm i
+    $ node app.js
+
+----
+
+
+Start, og utforsk med Postman
+=============================
+
+* GET
+* PUT
+* POST
 
 ----
 
@@ -294,3 +388,12 @@ Oppgave 5: Lag route og controller for å lage nye
 
 * Se Angular $resource doc for hvordan man integrerer i TodoRepository
 
+----
+
+Oppgave 6: Lag route og controller for å oppdatere
+==================================================
+
+----
+
+Ekstraoppgave: Lag funksjonalitet for sletting, og lag sletteknapp
+===================================================================
