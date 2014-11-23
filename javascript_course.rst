@@ -14,29 +14,31 @@ Agenda
 
 * Oppsett av utviklingsmiljø
 
-* Oppsett av en mock REST-tjeneste
+* Hva er et utviklingsmiljø?
 
-  - Grunt
+* Kort om teknologiene
 
-  - Node
+  - Hva er stabilt?
 
-  - Npm
+  - Hva er ustabilt?
 
-* Oppsett av AngularJS skjellett
+  - Hvorfor ikke Maven?
 
-  - Yeoman
+* Serverside JavaScript
 
-  - Bower
+  - Vi skal se på en mockserver
 
-* Utvikling av en todoliste lokalt i AngularJS
+* Bruk av verktøy for å sette opp AngularJS skjellett
 
-  - Routing
+  - Gjennomgang av filer
 
-  - Controllere
+* Konsepter i AngularJS
 
-  - Testing
+* Oppgaver
 
-  - Templating
+  - Alternativ 1: Todoliste
+
+  - Alternativ 2: Aurora-tjenester
 
 * Integrering med mock REST-tjeneste
 
@@ -46,9 +48,11 @@ Agenda
 
   - Oppdatere data
 
+* Integrering med Maven-prosjekter
+
 ----
 
-Oppsett av maskin
+Oppsett av utviklingsmaskin
 =================
   - Aurora utviklerimage
   - Editor (anbefaler Sublime)
@@ -67,6 +71,17 @@ Andre kjekke verktøy
 
 ----
 
+Kort om teknologiene
+====================
+
+* Node
+
+* Avhengigheter
+
+* Byggeverktøy
+
+----
+
 Last ned REST-tjenesten
 =======================
 
@@ -77,13 +92,16 @@ Last ned REST-tjenesten
 
 ----
 
-Code
-====
+Filer
+=====
+
+* App.js
+
+* Gruntfile.js
+
+* Katalog app
 
 * package.json
-* npm
-* Gruntfile.js
-* Grunt
 
 ----
 
@@ -200,7 +218,7 @@ Oppgave 1: Navn på innlogget bruker
 ===================================
 
 
-* Lag en fil, userinfo.js
+* Lag en fil, userinfo.js. Legg til i index.html
 
 * Lag en kontroller, UserInfoCtrl i riktig modul
 
@@ -216,7 +234,7 @@ Oppgave 1: Navn på innlogget bruker
 
 .. code:: js
 
-    angular.module('Modulnavn')
+    angular.module('angularApp')
         .controller('UserInfoCtrl', function($scope) {
             $scope.navn = "En variabel";
         });
