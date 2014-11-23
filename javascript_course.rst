@@ -53,7 +53,7 @@ Agenda
 ----
 
 Oppsett av utviklingsmaskin
-=================
+===========================
   - Aurora utviklerimage
   - Editor (anbefaler Sublime)
   - Node, NPM, Git
